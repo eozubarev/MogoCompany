@@ -305,7 +305,9 @@ hr {
 
 .card__img {
   transition: transform 0.1s linear; /* Чтобы трансформация происходила плавно 260-я строка кода */
-  background: linear-gradient(to bottom, #373737, #373737);
+  background: linear-gradient(to bottom, #f38181, #fce38a);
+  
+  
 }
 
 .card__img img {
@@ -730,3 +732,59 @@ hr {
       margin: 15px 0;
       background-color: #f38181;
     }
+
+    /* stories */
+
+    .stories {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.stories__item {
+  width: 375px;
+  background-color: white;
+  position: relative;
+}
+
+.stories__img img {
+  display: block;
+}
+
+.stories__text {
+  padding-top: 15px;
+  margin-left: 18px;
+  text-align: left;
+  
+}
+
+.stories__title {
+  margin-bottom: 5px;
+      font-size: 14px;
+      color: #333;
+      text-transform: uppercase;
+}
+
+.stories__subtitle {
+  font-size: 15px;
+      color: #999;
+      font-weight: 300;
+      font-style: italic;
+}
+
+.stories__statistics { /* В целом нужно использовать JS но для примера, нужно было сделать на флексах */
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.stories__subtitle:after {
+  content: "";
+  display: block;
+  width: 377px;
+  height: 1px;
+  margin: 10px auto 10px;
+
+  background-color: #dddddd;
+
+
+}
