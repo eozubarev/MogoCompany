@@ -33,7 +33,8 @@ hr {
 /* Container */
 .container {
   width: 100%;
-  max-width: 1200px;
+  padding: 0 15px; /* @media */
+  max-width: 1230px; /* Прибавили 15х2=30 пикс к контейнеру */
   margin: 0 auto; /* Выравнивание по центру*/
 }
 
@@ -235,6 +236,13 @@ hr {
   background: url("..//img/clients/bgclients.gif");
 }
 
+.section--map {
+  background: #e6e6e6 url("..//img/map.gif");
+  padding: 40px 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
 .section__header {
   width: 100%;
   max-width: 950px;
@@ -278,11 +286,18 @@ hr {
 .card {
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
+  margin: 80px 0 0;
+  
+  
+}
+
+.card:last-child {
+  margin-left: 10px;
 }
 
 .card__item {
-  width: 375px;
+  width: 33.33333%;
+  padding: 0 15px;
   background-color: white;
   position: relative;
 }
@@ -312,6 +327,10 @@ hr {
 
 .card__img img {
   display: block;
+
+  max-width: 100%; /* media 325-326-289 */
+  height: auto;
+
   transition: opacity 0.1s linear;
   transition: transform 0.1s linear;
 }
@@ -361,6 +380,7 @@ hr {
 
 .stat {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .stat__item {
@@ -480,7 +500,7 @@ hr {
   position: relative;
   padding: 15px 20px 15px 65px;
   border-bottom: 1px solid transparent;
-  cursor: pointer;
+  cursor: pointer; /* Чтобы при наведении появился курсор нажатия */
 }
 
 
@@ -775,6 +795,7 @@ hr {
 .stories__statistics { /* В целом нужно использовать JS но для примера, нужно было сделать на флексах */
   margin-top: 20px;
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .stories__subtitle:after {
@@ -785,6 +806,349 @@ hr {
   margin: 10px auto 10px;
 
   background-color: #dddddd;
+}
 
+
+/* Map */ 
+
+ .map {
+  text-align: center;
+}
+
+.map__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f38181;
+}
+
+.map__title:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 10px auto 0px;
+
+  background-color: #f38181;
+}
+
+.map__title a {
+  color: #f38181;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.map__title a:hover {
+  text-decoration: underline;
 
 }
+
+/* Footer */
+.footer {
+  background-color: #f8f8f8;
+  padding-top: 65px;
+}
+
+.footer__inner {
+  padding-bottom: 65px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.footer__col--first {
+  width: 40%;
+}
+
+.footer__col--second {
+  width: 29%;
+}
+
+.footer__col--third {
+  width: 22%;
+}
+
+.footer__logo {
+  margin-bottom: 30px;
+  color: #ccc;
+  font-size: 46px;
+  font-weight: 700;
+}
+
+.footer__text {
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: #999;
+}
+
+ .footer__social {
+   margin-bottom: 25px;
+ }
+
+ .footer__social-header {
+   padding-bottom: 15px;
+  font-size: 14px;
+  color: black;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+ .footer__social-header b {
+   font-size: 18;
+ }
+
+ .footer__social-content {
+   padding-top: 15px;
+
+   color: #999;
+   font-size: 15px;
+   font-style: italic;
+   font-weight: 300;
+ }
+
+  .footer__social-content a {
+   display: inline-block;
+   vertical-align: middle;
+   margin-left: 10px;
+   font-size: 18px;
+   color: #95e1d3;
+  }
+
+  .footer__social-content a:hover {
+    color: #53b3a1;
+  }
+
+  .footer__title{
+    font-size: 14px;
+    color: black;
+    text-transform: uppercase;
+    margin: 30px 0;
+  }
+
+   /* Blogs */
+   .blogs__item {
+     display: flex;
+     align-items: center;
+     margin-bottom: 30px;
+   }
+
+   .blogs__img {
+     width: 120px;
+     height: 80ps;
+   }
+
+   .blogs__content {
+     padding-left: 20px;
+   }
+
+   .blogs__title {
+     font-family: "Montserrat"; 
+     font-size: 12px;
+     color: #333;
+     text-decoration: none;
+     text-transform: uppercase;
+   }
+
+   .blogs__title:hover {
+     text-decoration: underline; /* Чтобы при наведении на текст(ссылку было понятно что он кликабельный */
+   }
+
+   .blogs__subtitle {
+     font-family: "Montserrat"; 
+     font-size: 12px;
+     color: #999;
+     font-style: italic;
+   }
+
+   .blogs__inst-text {
+     font-size: 13px;
+     font-style: italic;
+     color: #999;
+     cursor: pointer;
+   }
+
+   .blogs__inst-text:hover {
+     text-decoration: underline;
+   }
+   /* Subscribe */
+
+   .subscribe {
+     width: 100%;
+     max-width: 380px;
+     display: flex;
+   }
+  
+
+   .subscribe__input {
+     width: 60%; /* 230/380пикс, это размеры первого блока = 60% */
+     padding: 12px;
+     background: white;
+     border: 1px solid #e7e7e7;
+     font-family: "Montserrat"; /* Для инпута и бтн всегда прописывать ф.фэмили иначе он берётся из браузера по умолчанию */
+     line-height: 1.1;
+     font-size: 15px;
+     color: black; /* Прописываем черный чтобы при введении email было отчётливо виден адрес */
+     font-style: italic;
+     font-weight: 300;
+     border-right: 0em;
+   }
+
+   .subscribe__btn {
+     width: 40%; /* Исходя из расчетов в строге 898 */
+
+     text-transform: uppercase;
+     padding: 12px 40 36px;
+     
+     
+     cursor: pointer;
+     font-family: "Montserrat";
+     line-height: 1.1;
+     background-color: #95e1d3;
+     font-size: 14px;
+     font-weight: bold;
+     color: white;
+     border: 0;
+     
+     
+   }
+
+   .subscribe__input::placeholder {
+     color: #ccc;
+   }
+
+   .subscribe__btn:hover {
+     background-color: #74c7b8;
+     transition: background-color .2 linear;
+   }
+
+   .subscribe__btn:focus { /* Чтобы убрать outline(blue) при нажатии на кнопку или форму */
+     outline: 0;
+   }
+
+      .subscribe__input:focus {
+        outline: 0;
+        border-color: #95e1d3;
+      }
+
+   @media (max-width: 1230px) { /* Notebook */
+      /* Intro */
+     .intro__suptitle {
+       font-size: 52px;
+     }
+
+     .intro__title {
+       font-size: 120px;
+     }
+        
+   }
+  
+    @media (max-width: 990px) { /* The tablet albom */
+
+       /* Intro */
+     .intro__suptitle {
+       font-size: 32px;
+     }
+
+     .intro__title {
+       font-size: 80px;
+     }
+
+     /* Stat */
+     .stat {
+       justify-content: center;
+     }
+     .stat__item {
+       flex: none;
+       width: 33%;
+       padding-top: 30px;
+       padding-bottom: 30px;
+
+       border: 0;
+     }
+
+     .stat__item:last-child {
+       border-right: 0;
+     }
+
+    }
+
+       @media (max-width: 770px) { /*  The tablet */
+       /* nav */
+      .nav {
+        display: none; /* доделать бургер меню */
+      }
+       
+       /* Section */
+      .section {
+        padding: 40px 0;
+      }
+
+      /* Card */ 
+      .card {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+      }
+      
+
+      .card__item {
+        width: 100%;
+        max-width: 380px;
+        margin-bottom: 30px;
+        
+      }
+      
+      .card__item:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Slider */
+      .slider__text {
+        display: none;
+      }
+
+      .slider__item.active:before {
+        width: 50%; /* занимает 50% ширины блока */
+      }
+
+       @media (max-width: 575px) { /* Mobile portret */
+
+       /* Intro */
+     .intro__suptitle {
+       font-size: 22px;
+     }
+
+     .intro__title {
+       font-size: 40px;
+     }
+
+      /* Section */
+       .section__header {
+         margin-bottom: 50px;
+       }
+
+      .section__title {
+        font-size: 24px;
+      }
+      .section__suptitle {
+        font-size: 20px;
+      }
+
+      .section__title:after {
+        margin: 20px auto;
+      }
+
+      /* Stat */ 
+      .stat__item {
+        width: 100%;
+
+        border-bottom: 1px solid #b5eae0;
+      }
+      .stat__item:last-child {
+        border-bottom: 0;
+      }
+
+      .stat__count {
+        font-size: 52px;
+      }
+
+    }
